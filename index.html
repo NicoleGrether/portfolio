@@ -34,12 +34,17 @@
       flex-direction: column;
     }
     .video-entry img {
-      width: 100%;
-      height: auto;
-      display: block;
-      cursor: pointer;
-      border-radius: 8px;
-    }
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video-entry img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
     .video-title {
       font-size: 1.1rem;
       font-weight: bold;
@@ -55,16 +60,37 @@
       color: #0066cc;
     }
     .resume-button {
-      display: inline-block;
-      margin: 1rem auto;
-      padding: 0.75rem 1.5rem;
-      background-color: #0066cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-  </style>
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.resume-button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+  @media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  .resume-button {
+    display: block;
+    margin: 1rem 0;
+  }
+  .video-entry img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+</style>
 </head>
 <body>
   <div class="container">
@@ -73,12 +99,12 @@
       <h1 style="margin: 0; font-size: 3.2rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">Nicole Grether</h1>
       <div style="text-align: right; margin-top: 0.5rem;">
         <a href="resume.pdf" class="resume-button" target="_blank">📄 Download My Resume</a><br>
-        <a href="mailto:NicoleGrether@gmail.com">📧 NicoleGrether@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/nicolegrether" target="_blank">🔗 Connect on LinkedIn</a>
+        <a href="mailto:NicoleGrether@gmail.com" style="transition: color 0.3s ease; color: #0066cc; text-decoration: none; border-bottom: 1px solid transparent;" onmouseover="this.style.color='#003366'; this.style.borderBottom='1px solid #003366'" onmouseout="this.style.color='#0066cc'; this.style.borderBottom='1px solid transparent'">📧 NicoleGrether@gmail.com</a><br>
+        <a href="https://www.linkedin.com/in/nicolegrether" target="_blank" style="transition: color 0.3s ease; color: #0066cc; text-decoration: none; border-bottom: 1px solid transparent;" onmouseover="this.style.color='#003366'; this.style.borderBottom='1px solid #003366'" onmouseout="this.style.color='#0066cc'; this.style.borderBottom='1px solid transparent'">🔗 Connect on LinkedIn</a>
       </div>
     </div>
 
-    <p style="text-align:center; max-width:700px; margin: 1rem auto; color:#444; font-size: 1.1rem; font-style: italic">
+    <p style="text-align:center; max-width:700px; margin: 1rem auto; color:#444; font-size: 1.3rem; font-style: italic">
       I am a video journalist with two decades of experience producing award-winning content for top-tier national and international news outlets. My expertise lies in crafting emotionally resonant narratives, particularly in the realm of health, mental health, and social justice.
     </p>
     
@@ -154,3 +180,4 @@
   </div>
 </body>
 </html>
+
